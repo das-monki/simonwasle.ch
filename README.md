@@ -1,237 +1,71 @@
-# UIx Static Site Starter
+# Simon Wasle's Personal Website
 
-A Clojure template for building static sites with shadow-cljs and UIx, featuring server-side rendering with client-side hydration.
+A modern, SEO-friendly personal homepage built with Clojure/ClojureScript, featuring server-side rendering with client-side hydration. Deployed automatically to GitHub Pages.
 
-## Features
+## Technology Stack
 
-- **Server-Side Rendering (SSR)**: Pre-render pages for better SEO and faster initial loads
-- **Client-Side Hydration**: Interactive components come alive after page load
-- **Code Splitting**: Separate bundles for each page to minimize JavaScript payload
-- **Hot Reloading**: Fast development with shadow-cljs
-- **Static Site Generation**: Build fully static HTML files for deployment
-- **Modern Stack**: Clojure, ClojureScript, UIx (React wrapper), shadow-cljs (via deps.edn)
+**Core Technologies:**
+- **Clojure/ClojureScript**: Full-stack development in a single language
+- **UIx**: React wrapper for ClojureScript, enabling component-based UI development
+- **Shadow-cljs**: ClojureScript build tool with excellent development experience
+- **Server-Side Rendering (SSR)**: Pre-rendered HTML for optimal SEO and initial load performance
+- **Client-Side Hydration**: React components become interactive after page load
 
-## Prerequisites
+**Why This Approach:**
+- **SEO-Friendly**: Search engines receive fully rendered HTML content
+- **Fast Initial Load**: Users see content immediately, before JavaScript loads
+- **Progressive Enhancement**: Site works without JavaScript, enhances with it
+- **Developer Experience**: Hot reloading, REPL-driven development, unified codebase
 
-### Option 1: With Nix (Recommended)
-- [Nix package manager](https://nixos.org/download.html)
-- (Optional) [direnv](https://direnv.net/) for automatic environment loading
+## Architecture
 
-### Option 2: Manual Installation
-- Java 11+
-- Node.js 16+
-- Clojure CLI tools
-- Babashka (optional, for task automation)
+The site uses a hybrid rendering approach:
 
-## Quick Start
+1. **Build Time**: Static HTML pages are generated with full content
+2. **Runtime**: Minimal JavaScript loads to hydrate interactive components
+3. **Best of Both Worlds**: SEO benefits of static sites + React's interactivity
 
-### Using Nix Development Shell
+Components are written in `.cljc` files, allowing them to render on both server and client. The server uses `uix.dom.server/render-to-string` for HTML generation, while the client uses `uix.dom/hydrate-root` for interactivity.
 
-1. **Enter the development shell:**
-   ```bash
-   nix develop
-   # or with direnv installed
-   direnv allow
-   ```
+## Development
 
-2. **Run development commands:**
-   ```bash
-   # For development (in separate terminals):
-   dev      # Start shadow-cljs with hot reload
-   server   # Start Ring server for SSR
+**Prerequisites:**
+- [Nix package manager](https://nixos.org/download.html) (recommended)
+- Or: Java 11+, Node.js 16+, Clojure CLI tools
 
-   # For production:
-   build    # Build complete static site
-   serve    # Serve the built site locally
-   ```
+**Quick Start:**
+```bash
+# Enter development environment (with Nix)
+nix develop
 
-### Using Traditional Setup
+# Start development servers (in separate terminals)
+dev      # Shadow-cljs with hot reload
+server   # Ring server for SSR preview
 
-1. **Install npm dependencies (React only):**
-   ```bash
-   npm install  # Installs React and React-DOM
-   # or with Babashka
-   bb install
-   ```
+# Build for production
+build    # Generates static site in docs/ for GitHub Pages
+```
 
-   Note: shadow-cljs is managed through deps.edn, not npm.
+## Deployment
 
-2. **Development mode:**
-   ```bash
-   # Terminal 1: Start shadow-cljs
-   clojure -M -m shadow.cljs.devtools.cli watch app
-   # or
-   bb dev
+The site automatically deploys to GitHub Pages from the `docs/` directory. The build process:
 
-   # Terminal 2: Start Ring server (for SSR)
-   clojure -M:server
-   # or
-   bb server
-   ```
-
-   - Shadow-cljs UI: http://localhost:8080
-   - Development server: http://localhost:3000
-
-3. **Build for production:**
-   ```bash
-   bb build
-   # or manually:
-   clojure -M -m shadow.cljs.devtools.cli release app
-   clojure -M:static
-   ```
-
-   This generates static HTML files in `resources/public/`.
-
-4. **Serve static site:**
-   ```bash
-   bb serve-static
-   ```
-
-   Visit http://localhost:8000
+1. Compiles ClojureScript to optimized JavaScript bundles
+2. Renders all pages to static HTML with full content
+3. Copies assets and generates the complete static site
+4. GitHub Pages serves the static files with CDN acceleration
 
 ## Project Structure
 
 ```
-├── src/
-│   ├── main/                 # Server-side Clojure code
-│   │   ├── core.clj         # HTTP server and routing
-│   │   └── render.clj       # SSR rendering logic
-│   └── app/
-│       ├── common/          # Shared CLJC code
-│       │   └── components.cljc
-│       ├── pages/           # Page components (CLJC)
-│       │   ├── home.cljc
-│       └── client/          # Client-side ClojureScript
-│           ├── home.cljs    # Home page hydration
-├── resources/public/        # Static assets and generated HTML
-├── dev/                     # Development and build tools
-│   ├── build.clj           # Static site generator
-│   └── user.clj            # REPL utilities and helpers
-├── deps.edn                # Clojure dependencies
-├── shadow-cljs.edn         # Shadow-cljs configuration
-├── package.json            # NPM dependencies
-├── bb.edn                  # Babashka tasks
-├── flake.nix               # Nix flake configuration
-└── .envrc                  # direnv configuration
+├── src/app/pages/home.cljc    # Main page component (universal)
+├── src/app/client/home.cljs   # Client-side hydration entry
+├── src/main/render.clj        # SSR rendering and HTML templates
+├── src/main/core.clj          # Development server
+├── dev/build.clj              # Static site generator
+├── shadow-cljs.edn            # ClojureScript build config
+├── flake.nix                  # Nix development environment
+└── docs/                      # Generated static site (GitHub Pages)
 ```
 
-## How It Works
-
-1. **Universal Components**: Pages are written in `.cljc` files, allowing them to be rendered on both server and client
-2. **Server Rendering**: The server uses `uix.dom.server/render-to-string` to generate HTML
-3. **Client Hydration**: JavaScript bundles use `uix.dom/hydrate-root` to make the static HTML interactive
-4. **Code Splitting**: Each page gets its own JS bundle plus a shared bundle
-5. **Dev Tooling**: Build scripts and development utilities are kept in the `dev/` directory following Clojure conventions
-
-## Adding New Pages
-
-1. Create a new page component in `src/app/pages/mypage.cljc`
-2. Create a hydration file in `src/app/client/mypage.cljs`
-3. Add the module to `shadow-cljs.edn`:
-   ```clojure
-   :mypage {:init-fn app.client.mypage/init
-            :depends-on #{:shared}}
-   ```
-4. Add rendering function in `src/main/render.clj`
-5. Add route in `src/main/core.clj`
-6. Update `build/static.clj` to generate the static HTML
-
-## Available Commands
-
-### Nix Development Shell Commands
-
-When using `nix develop`:
-
-- `dev` - Start shadow-cljs development server with hot reload
-- `server` - Start Ring server for SSR development
-- `build` - Build complete static site (JS + HTML)
-- `serve` - Serve the static site locally on port 8000
-- `clean` - Clean generated files
-- `repl` - Start Clojure REPL with dev tools
-- `format` - Format Clojure code with cljfmt
-- `lint` - Run clj-kondo static analysis
-- `update-deps` - Update deps-lock.json for Nix builds
-
-### Babashka Tasks
-
-If using Babashka directly:
-
-- `bb clean` - Remove build artifacts
-- `bb install` - Install npm dependencies (React only)
-- `bb dev` - Start development server
-- `bb server` - Start Ring server
-- `bb build` - Build complete static site (JS + HTML)
-- `bb serve-static` - Serve static site locally
-
-## Building with Nix
-
-For reproducible builds using Nix (run outside `nix develop`):
-
-```bash
-# Build the static site with Nix (reproducible)
-nix build
-
-# The output will be in ./result/
-ls -la ./result/
-
-# Or build and copy to a specific location
-nix build && cp -r result/* /path/to/deployment/
-```
-
-Note: Use `nix build` for CI/CD or when you need reproducible builds. Use `build` inside `nix develop` for faster local development.
-
-## Deployment
-
-The generated static files in `resources/public/` can be deployed to any static hosting service:
-
-- Netlify
-- Vercel
-- GitHub Pages
-- AWS S3 + CloudFront
-- Cloudflare Pages
-
-Simply upload the contents of `resources/public/` to your hosting provider.
-
-## Development
-
-The `dev/` directory contains development and build utilities following Clojure conventions:
-
-- **dev/build.clj**: Static site generator script
-- **dev/user.clj**: REPL utilities and development helpers
-- **:dev alias**: Includes dev tools on classpath for REPL development
-- **:static alias**: Runs the static site generation
-
-You can start a REPL with dev tools available using:
-```bash
-clojure -M:dev
-```
-
-Example REPL workflow:
-```clojure
-;; Start development server
-(start-server)
-
-;; Generate static files
-(generate-static)
-
-;; Test individual page rendering
-(render-home)
-
-;; Clean generated files
-(clean)
-
-;; Stop server when done
-(stop-server)
-```
-
-## Tips
-
-- Write components in `.cljc` files for universal rendering
-- Use `#?(:cljs ...)` reader conditionals for client-only code
-- Keep pages lightweight - heavy interactivity can be loaded after hydration
-- Test both SSR and hydrated versions during development
-- Build scripts and dev utilities belong in the `dev/` directory
-
-## License
-
-This is free and unencumbered software released into the public domain.
+This setup provides a robust foundation for building fast, SEO-friendly single-page applications with modern tooling and deployment automation.
