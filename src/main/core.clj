@@ -19,7 +19,6 @@
   (println "Regenerating HTML files...")
   (require '[main.render :as render] :reload-all)
   (require '[app.pages.home :as home] :reload-all)
-  (require '[app.common.components :as c] :reload-all)
 
   ;; Generate home page
   (println "  Generating index.html...")
