@@ -9,7 +9,7 @@
       "Simon Wasle")
     ($ :p
       {:class "text-md text-gray-900"}
-      "developer • entrepreneur • speaker")))
+      "developer • entrepreneur • maker")))
 
 (defui landscape-graphic []
   ($ :div

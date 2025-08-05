@@ -15,7 +15,7 @@
        "  <meta name=\"description\" content=\"" meta-description "\">\n"
        "  <title>" title "</title>\n"
        "  <meta name=\"author\" content=\"Simon Wasle\">\n"
-       "  <meta name=\"keywords\" content=\"Simon Wasle, software engineer, developer, entrepreneur, speaker, full-stack development, system architecture, Basel, Switzerland\">\n"
+       "  <meta name=\"keywords\" content=\"Simon Wasle, software engineer, developer, entrepreneur, maker, full-stack development, system architecture, Basel, Switzerland\">\n"
        "  <link rel=\"canonical\" href=\"https://simonwasle.ch\">\n"
        "  <!-- Open Graph / Facebook -->\n"
        "  <meta property=\"og:type\" content=\"website\">\n"
@@ -81,7 +81,7 @@
        "    \"@type\": \"Person\",\n"
        "    \"name\": \"Simon Wasle\",\n"
        "    \"jobTitle\": \"Software Engineer\",\n"
-       "    \"description\": \"Developer • Entrepreneur • Speaker\",\n"
+       "    \"description\": \"Developer • Entrepreneur • Maker\",\n"
        "    \"url\": \"https://simonwasle.ch\",\n"
        "    \"address\": {\n"
        "      \"@type\": \"PostalAddress\",\n"
@@ -117,4 +117,4 @@
   (render-page home/home-page
                {:title "Simon Wasle"
                 :script-src "/assets/js/home.js"
-                :meta-description "developer, entrepreneur, speaker"}))
+                :meta-description "developer, entrepreneur, maker"}))
