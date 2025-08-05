@@ -14,8 +14,10 @@ pom.xml.asc
 .shadow-cljs/
 node_modules/
 
-# Generated files
-resources/public/
+# Generated files - ignore specific patterns instead of whole directory
+resources/public/*.html
+resources/public/assets/js/
+resources/public/assets/css/main.css
 
 # IDE
 .idea/
