@@ -3,7 +3,7 @@
 
 (defui header-section []
   ($ :header
-    {:class "mb-6 md:mb-16 max-w-prose mx-auto"}
+    {:class "mb-10 md:mb-16 max-w-prose mx-auto"}
     ($ :h1
       {:class "text-3xl mb-2 text-gray-900"}
       "Simon Wasle")
@@ -13,9 +13,9 @@
 
 (defui landscape-graphic []
   ($ :div
-    {:class "mb-6 md:mb-16 max-w-prose mx-auto"}
+    {:class "mb-10 md:mb-16 max-w-prose mx-auto"}
     ($ :svg
-      {:class "w-full h-24 landscape-svg md:h-24 h-32"
+      {:class "landscape-svg w-fill"
        :viewBox "0 0 800 128"
        :preserveAspectRatio "xMidYMid meet"
        :fill "none"
@@ -48,7 +48,7 @@
         ($ :line {:x1 "626" :y1 "43" :x2 "620" :y2 "49"})
         ($ :line {:x1 "615" :y1 "30" :x2 "607" :y2 "30"})
         ($ :line {:x1 "626" :y1 "17" :x2 "620" :y2 "13"}))
-      ;; Animated waves (positioned lower)
+      ;; Animated waves (positioned lower, extending full width)
       ($ :g
         {:class "wave-1"}
         ($ :path

@@ -59,7 +59,6 @@
        "        --boat-sail-stroke: 3;\n"
        "        --sun-radius: 22;\n"
        "        --boat-width: 100;\n"
-       "        height: 8rem;\n"
        "      }\n"
        "      .wave-1, .wave-2, .wave-3 {\n"
        "        animation: wave 3s ease-in-out infinite;\n"
