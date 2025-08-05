@@ -192,6 +192,8 @@
                   help = "Build complete static site (JS + HTML)";
                   command = ''
                     nix build .\#static-site
+                    rm -rf docs
+                    cp -r result docs
                   '';
                 }
                 {
