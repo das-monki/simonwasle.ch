@@ -69,3 +69,8 @@ The site automatically deploys to GitHub Pages from the `docs/` directory. The b
 ```
 
 This setup provides a robust foundation for building fast, SEO-friendly single-page applications with modern tooling and deployment automation.
+
+## License
+
+**Code**: MIT License - see [LICENSE](LICENSE) file
+**Content**: All text content, personal information, and branding remain under copyright of Simon Wasle.
