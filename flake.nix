@@ -193,7 +193,8 @@
                   command = ''
                     nix build .\#static-site
                     rm -rf docs
-                    cp -r result docs
+                    mkdir -p docs
+                    rsync -a --no-perms --no-owner --no-group result/* docs/
                   '';
                 }
                 {
