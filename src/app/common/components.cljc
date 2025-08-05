@@ -25,13 +25,7 @@
                             "text-white font-bold" 
                             "text-gray-300 hover:text-white"))}
               "Home")
-           ($ :a
-              {:href "/about.html"
-               :class (str "no-underline "
-                          (if (= current-page :about) 
-                            "text-white font-bold" 
-                            "text-gray-300 hover:text-white"))}
-              "About")))))
+))))
 
 (defui counter [{:keys [initial-value]
                  :or {initial-value 0}}]

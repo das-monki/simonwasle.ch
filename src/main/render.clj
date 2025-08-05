@@ -1,8 +1,7 @@
 (ns main.render
   (:require [uix.core :refer [$]]
             [uix.dom.server :as dom.server]
-            [app.pages.home :as home]
-            [app.pages.about :as about]))
+            [app.pages.home :as home]))
 
 (defn html-template
   [{:keys [title content script-src meta-description]
@@ -34,12 +33,7 @@
 
 (defn render-home []
   (render-page home/home-page
-               {:title "Home - UIx Static Site"
+               {:title "Simon Wasle"
                 :script-src "/assets/js/home.js"
-                :meta-description "Welcome to UIx Static Sites - Build blazing fast static sites with Clojure"}))
+                :meta-description "Simon Wasle's personal website"}))
 
-(defn render-about []
-  (render-page about/about-page
-               {:title "About - UIx Static Site"
-                :script-src "/assets/js/about.js"
-                :meta-description "Learn about UIx Static Sites and the technology stack"}))

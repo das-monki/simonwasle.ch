@@ -11,7 +11,6 @@
                  (fs/delete-tree "resources/public/assets/js")
                  (fs/delete-tree ".shadow-cljs")
                  (fs/delete-if-exists "resources/public/index.html")
-                 (fs/delete-if-exists "resources/public/about.html")
                  (println "Clean complete!"))}
 
   install {:doc "Install npm dependencies"

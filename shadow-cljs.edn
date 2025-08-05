@@ -25,8 +25,7 @@
          :home {:init-fn app.client.home/init
                 :depends-on #{:shared}}
 
-         :about {:init-fn app.client.about/init
-                 :depends-on #{:shared}}}
+}
 
         ;; Separate build hooks for dev and release
         :dev

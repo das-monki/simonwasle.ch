@@ -101,10 +101,8 @@ A Clojure template for building static sites with shadow-cljs and UIx, featuring
 │       │   └── components.cljc
 │       ├── pages/           # Page components (CLJC)
 │       │   ├── home.cljc
-│       │   └── about.cljc
 │       └── client/          # Client-side ClojureScript
 │           ├── home.cljs    # Home page hydration
-│           └── about.cljs   # About page hydration
 ├── resources/public/        # Static assets and generated HTML
 ├── dev/                     # Development and build tools
 │   ├── build.clj           # Static site generator
@@ -122,7 +120,7 @@ A Clojure template for building static sites with shadow-cljs and UIx, featuring
 1. **Universal Components**: Pages are written in `.cljc` files, allowing them to be rendered on both server and client
 2. **Server Rendering**: The server uses `uix.dom.server/render-to-string` to generate HTML
 3. **Client Hydration**: JavaScript bundles use `uix.dom/hydrate-root` to make the static HTML interactive
-4. **Code Splitting**: Each page gets its own JS bundle (home.js, about.js) plus a shared bundle
+4. **Code Splitting**: Each page gets its own JS bundle plus a shared bundle
 5. **Dev Tooling**: Build scripts and development utilities are kept in the `dev/` directory following Clojure conventions
 
 ## Adding New Pages

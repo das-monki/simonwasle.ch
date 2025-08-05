@@ -19,16 +19,12 @@
   (println "Regenerating HTML files...")
   (require '[main.render :as render] :reload-all)
   (require '[app.pages.home :as home] :reload-all)
-  (require '[app.pages.about :as about] :reload-all)
   (require '[app.common.components :as c] :reload-all)
 
   ;; Generate home page
   (println "  Generating index.html...")
   (write-file "resources/public/index.html" (render/render-home))
 
-  ;; Generate about page
-  (println "  Generating about.html...")
-  (write-file "resources/public/about.html" (render/render-about))
 
   (println "Static files regenerated!"))
 

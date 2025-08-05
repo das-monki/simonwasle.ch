@@ -41,10 +41,6 @@
   []
   (render/render-home))
 
-(defn render-about
-  "Render about page (useful for REPL testing)"
-  []
-  (render/render-about))
 
 (defn clean
   "Clean generated files"
@@ -69,7 +65,6 @@
 
   ;; Test rendering individual pages
   (render-home)
-  (render-about)
 
   ;; Clean up
   (clean)
