@@ -1,7 +1,5 @@
-{:source-paths ["src"]
-
- :dependencies [[com.pitch/uix.core "1.1.0"]
-                [com.pitch/uix.dom "1.1.0"]]
+{:deps true
+ :npm-deps {:install false}
 
  :builds
  {:app {:target :browser
@@ -20,12 +18,7 @@
          :language-out :ecmascript5}
 
         :modules
-        {:shared {:entries []}
-
-         :home {:init-fn app.client.home/init
-                :depends-on #{:shared}}
-
-}
+        {:home {:init-fn app.client.home/init}}
 
         ;; Separate build hooks for dev and release
         :dev
@@ -36,10 +29,6 @@
 
         :devtools
         {:http-root "resources/public"
-         :http-port 8080}}
-
-  :test {:target :node-test
-         :output-to "out/test.js"
-         :autorun true}}
+         :http-port 8080}}}
 
  :dev-http {8080 {:root "resources/public"}}}

@@ -200,7 +200,7 @@
                   name = "serve";
                   help = "Serve the static site locally";
                   command = ''
-                    cd resources/public && python3 -m http.server 8000
+                    cd docs/ && python3 -m http.server 8000
                   '';
                 }
                 {

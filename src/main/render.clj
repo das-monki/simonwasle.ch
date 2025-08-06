@@ -72,8 +72,7 @@
        "<body>\n"
        "  <div id=\"root\">" content "</div>\n"
        (when script-src
-         (str "\n  <script src=\"/assets/js/shared.js\"></script>\n"
-              "  <script src=\"" script-src "\"></script>\n"))
+         (str "  <script src=\"" script-src "\"></script>\n"))
        "</body>\n"
        "</html>"))
 
