@@ -126,8 +126,8 @@
           };
 
           packages = {
-            default = config.packages.static-site;
-            static-site = mkStaticSite "static-uix-site" system pkgs;
+            default = config.packages.my-site;
+            my-site = mkStaticSite "my-website" system pkgs;
           };
 
           devshells =
@@ -191,8 +191,7 @@
                   name = "build";
                   help = "Build complete static site (JS + HTML)";
                   command = ''
-                    nix build .\#static-site
-                    rm -rf docs
+                    nix build .\#my-site
                     mkdir -p docs
                     rsync -a --no-perms --no-owner --no-group result/* docs/
                   '';
