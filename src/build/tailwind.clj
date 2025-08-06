@@ -3,12 +3,14 @@
   (:require [clojure.java.io :as io]
             [clojure.java.shell :as shell]))
 
-(defn- tailwind-installed? []
+(defn- tailwind-installed?
   "Check if Tailwind CSS is installed in node_modules"
+  []
   (.exists (io/file "node_modules/.bin/tailwindcss")))
 
-(defn- ensure-output-dir []
+(defn- ensure-output-dir
   "Ensure the CSS output directory exists"
+  []
   (let [css-dir (io/file "resources/public/assets/css")]
     (when-not (.exists css-dir)
       (.mkdirs css-dir))))
@@ -22,7 +24,7 @@
   (ensure-output-dir)
 
   (println "Building Tailwind CSS for production...")
-  (let [result (shell/sh "npx" "tailwindcss"
+  (let [result (shell/sh "npx" "@tailwindcss/cli"
                          "-i" "resources/css/input.css"
                          "-o" "resources/public/assets/css/main.css"
                          "--minify")]
@@ -39,7 +41,7 @@
   (ensure-output-dir)
 
   (println "Starting Tailwind CSS in watch mode...")
-  (let [result (shell/sh "npx" "tailwindcss"
+  (let [result (shell/sh "npx" "@tailwindcss/cli"
                          "-i" "resources/css/input.css"
                          "-o" "resources/public/assets/css/main.css"
                          "--watch")]
@@ -51,9 +53,10 @@
 
 (def ^:private tailwind-watch-process (atom nil))
 
-(defn- start-tailwind-process []
+(defn- start-tailwind-process
   "Start Tailwind CSS process and return the Process object"
-  (let [pb (ProcessBuilder. ["npx" "tailwindcss"
+  []
+  (let [pb (ProcessBuilder. ["npx" "@tailwindcss/cli"
                              "-i" "resources/css/input.css"
                              "-o" "resources/public/assets/css/main.css"
                              "--watch"])
