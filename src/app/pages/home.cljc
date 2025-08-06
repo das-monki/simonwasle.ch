@@ -15,23 +15,10 @@
   ($ :div
     {:class "mb-10 md:mb-16 max-w-prose mx-auto text-gray-900 dark:text-white"}
     ($ :svg
-      {:class "landscape-svg w-fill"
+      {:class "landscape-svg w-fill fill-none stroke-current"
        :viewBox "0 0 800 128"
        :preserveAspectRatio "xMidYMid meet"
-       :fill "none"
-       :stroke "currentColor"
-       :stroke-linecap "round"
-       :style {:--sun-stroke "2.5"
-               :--sun-ray-stroke "2"
-               :--wave-stroke-1 "3"
-               :--wave-stroke-2 "2.5"
-               :--wave-stroke-3 "2"
-               :--boat-stroke "3"
-               :--boat-mast-stroke "2.5"
-               :--boat-sail-stroke "2"
-               :--sun-radius "16"
-               :--boat-width "80"
-               :--moon-fill (if dark-mode? "#111827" "#ffffff")}}
+       :stroke-linecap "round"}
       ;; Clickable Sun/Moon (theme toggle)
       ($ :g
         {:class "cursor-pointer"
@@ -47,22 +34,19 @@
           ;; Moon (crescent)
           ($ :path
             {:d "M642 18 A12 12 0 0 1 642 42 A16 16 0 0 0 642 18"
-             :stroke "currentColor"
-             :stroke-width "var(--sun-stroke)"
-             :fill "none"
-             :class "sun-moon-icon"})
+             :class "opacity-0 animate-fade-in stroke-current stroke-3 md:stroke-[2.5] fill-none"})
           ;; Sun
           ($ :g
-            {:class "sun-moon-icon"}
+            {:class "opacity-0 animate-fade-in"}
             ;; Sun circle
             ($ :circle
               {:cx "650"
                :cy "30"
                :r "16"
-               :stroke-width "var(--sun-stroke)"})
+               :class "stroke-3 md:stroke-[2.5]"})
             ;; Sun rays (with consistent 3px gap from circle)
             ($ :g
-              {:stroke-width "var(--sun-ray-stroke)"}
+              {:class "stroke-3 md:stroke-2"}
               ($ :line {:x1 "650" :y1 "7" :x2 "650" :y2 "2"})
               ($ :line {:x1 "674" :y1 "17" :x2 "680" :y2 "13"})
               ($ :line {:x1 "685" :y1 "30" :x2 "693" :y2 "30"})
@@ -73,53 +57,46 @@
               ($ :line {:x1 "626" :y1 "17" :x2 "620" :y2 "13"})))))
       ;; Animated waves (positioned lower, extending full width)
       ($ :g
-        {:class "wave-1"}
+        {:class "animate-wave animation-delay-1000"}
         ($ :path
           {:d "M0 85 Q100 70 200 85 T400 85 T600 85 T800 85"
-           :stroke-width "var(--wave-stroke-1)"
-           :fill "none"}))
+           :class "fill-none stroke-3 md:stroke-3"}))
       ($ :g
-        {:class "wave-2"}
+        {:class "animate-wave animation-delay-500"}
         ($ :path
           {:d "M0 92 Q150 64 300 92 T600 92 T800 92"
-           :stroke-width "var(--wave-stroke-2)"
-           :fill "none"}))
+           :class "fill-none stroke-3 md:stroke-[2.5]"}))
       ($ :g
-        {:class "wave-3"}
+        {:class "animate-wave"}
         ($ :path
           {:d "M0 99 Q80 84 160 99 T320 99 T480 99 T640 99 T800 99"
-           :stroke-width "var(--wave-stroke-3)"
-           :fill "none"}))
+           :class "fill-none stroke-[2.5] md:stroke-2"}))
       ;; Boat (animated with waves)
       ($ :g
-        {:class "wave-2"}
+        {:class "animate-wave animation-delay-500"}
         ;; Boat hull (larger, more boat-like)
         ($ :path
           {:d "M110 69 L110 75 Q150 79 190 75 L190 69 L110 69"
-           :stroke-width "var(--boat-stroke)"
-           :fill "none"})
+           :class "fill-none stroke-4 md:stroke-3"})
         ;; Boat mast
         ($ :line
           {:x1 "150"
            :y1 "69"
            :x2 "150"
            :y2 "42"
-           :stroke-width "var(--boat-mast-stroke)"})
+           :class "stroke-4 md:stroke-[2.5]"})
         ;; Main sail (large triangle)
         ($ :path
           {:d "M150 44 L150 62 L175 62 Z"
-           :stroke-width "var(--boat-sail-stroke)"
-           :fill "none"})
+           :class "fill-none stroke-3 md:stroke-2"})
         ;; Jib sail (front triangle)
         ($ :path
           {:d "M150 47 L125 62 L150 62 Z"
-           :stroke-width "var(--boat-sail-stroke)"
-           :fill "none"})
+           :class "fill-none stroke-3 md:stroke-2"})
         ;; Small flag at top
         ($ :path
           {:d "M150 42 L160 44 L150 47"
-           :stroke-width "var(--boat-sail-stroke)"
-           :fill "none"})))))
+           :class "fill-none stroke-3 md:stroke-2"})))))
 
 (defui who-section []
   ($ :section
@@ -147,7 +124,7 @@
     ($ :div
       {:class "grid gap-8 md:grid-cols-2"}
       ($ :div
-        {:class ""}
+        {:class "prose prose-lg"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Technical Leadership")
@@ -155,7 +132,7 @@
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Guiding engineering teams through complex projects, establishing best practices, and mentoring developers to reach their full potential."))
       ($ :div
-        {:class ""}
+        {:class "prose prose-lg"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Full-Stack Development")
@@ -163,7 +140,7 @@
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Building end-to-end solutions using modern technologies including React, Node.js, Clojure, and cloud platforms."))
       ($ :div
-        {:class ""}
+        {:class "prose prose-lg"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "System Architecture")
@@ -171,7 +148,7 @@
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Designing scalable, maintainable systems that grow with your business needs and handle real-world complexity."))
       ($ :div
-        {:class ""}
+        {:class "prose prose-lg"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Consulting & Training")

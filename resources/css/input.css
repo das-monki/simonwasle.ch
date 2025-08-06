@@ -1,3 +1,61 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Base styles */
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Dark mode background for overscroll */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #111827;
+    }
+  }
+
+  body:has(.dark) {
+    background-color: #111827;
+  }
+}
+
+@utility animation-delay-* {
+  animation-delay: --value(integer)ms;
+}
+
+@theme {
+  --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  --animate-wave: wave 3s ease-in-out infinite;
+  @keyframes wave {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  --animate-fade-in: fade-in 0.5s ease-in-out 0.2s forwards;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

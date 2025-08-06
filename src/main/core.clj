@@ -24,7 +24,6 @@
   (println "  Generating index.html...")
   (write-file "resources/public/index.html" (render/render-home))
 
-
   (println "Static files regenerated!"))
 
 (defn start-server
