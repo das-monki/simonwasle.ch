@@ -69,7 +69,7 @@
        "  }\n"
        "  </script>\n"
        "</head>\n"
-       "<body>\n"
+       "<body class=\"font-sans\">\n"
        "  <div id=\"root\">" content "</div>\n"
        (when script-src
          (str "  <script src=\"" script-src "\"></script>\n"))
