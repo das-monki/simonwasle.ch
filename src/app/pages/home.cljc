@@ -108,12 +108,15 @@
       {:class "prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed"}
       ($ :p
         {:class "mb-4"}
-        "I'm a passionate software engineer with over a decade of experience building scalable systems and leading development teams. My expertise spans full-stack development, system architecture, and modern web technologies.")
+        "I'm an independent software developer and founder with more than 10 years of experience in industry and startups.")
       ($ :p
         {:class "mb-4"}
-        "I believe in writing clean, maintainable code and fostering collaborative engineering cultures. When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.")
+        "I like building things. Useful things. Beautiful things. Things people actually use. I’ve spent the last years turning napkin sketches into software that stands up in production. My expertise spans product design, full-stack development, system architecture, modern web technologies, infrastructure and operations.")
       ($ :p
-        "Currently based in Switzerland, I work with teams worldwide to solve complex technical challenges and deliver impactful software solutions."))))
+        {:class "mb-4"}
+        "I like clean, readable, and maintainable code, pragmatic LLM add-ons that solve real problems, and lightweight processes that keep teams moving. Between projects you’ll find me scratching my own itches - writing small utilities, experimenting with new tech, or tinkering with a half-finished hardware prototype.")
+      ($ :p
+        "Currently based in Switzerland, I’m building duupay and partnering with teams worldwide to turn ideas into reliable, production software. Open to select collaborations."))))
 
 (defui what-i-offer-section []
   ($ :section
