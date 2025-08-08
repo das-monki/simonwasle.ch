@@ -170,7 +170,8 @@
           {:href "https://github.com/das-monki"
            :class "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
            :target "_blank"
-           :rel "noopener noreferrer"}
+           :rel "noopener noreferrer"
+           :aria-label "My Github Profile"}
           ($ :svg
             {:class "w-7 h-7"
              :fill "none"
@@ -185,7 +186,8 @@
           {:href "https://twitter.com/eyes4theskies"
            :class "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
            :target "_blank"
-           :rel "noopener noreferrer"}
+           :rel "noopener noreferrer"
+           :aria-label "My X Profile (formerly Twitter)"}
           ($ :svg
             {:class "w-7 h-7"
              :fill "none"
@@ -200,7 +202,8 @@
           {:href "https://www.linkedin.com/in/simon-wasle-00ab56376"
            :class "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
            :target "_blank"
-           :rel "noopener noreferrer"}
+           :rel "noopener noreferrer"
+           :aria-label "My LinkedIn Profile"}
           ($ :svg
             {:class "w-7 h-7"
              :fill "none"

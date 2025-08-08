@@ -39,7 +39,7 @@
    (hawk/watch! [{:paths ["src/app"]
                   :filter hawk/file?
                   :handler (fn [ctx e]
-                             (println "File changed:" (:file e))
+                             (println "File changed:" (str (:file e)))
                              (regenerate-files)
                              ctx)}])
 
