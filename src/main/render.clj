@@ -36,7 +36,7 @@
        "  <meta property=\"twitter:creator\" content=\"@eyes4theskies\">\n"
        "  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n"
        "  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n"
-       "  <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\n"
+       "  <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap\" rel=\"stylesheet\">\n"
        "  <link rel=\"stylesheet\" href=\"/assets/css/main.css\">\n"
        "  <script>\n"
        "    // Prevent FOUC by setting dark class immediately\n"

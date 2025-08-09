@@ -126,7 +126,7 @@
       ($ :div
         {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
-          {:class "text-lg mb-3 text-gray-900 dark:text-white prose-headings:font-regular"}
+          {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Technical Leadership")
         ($ :p
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
@@ -243,7 +243,7 @@
     ($ :div
       {:class "text-center"}
       ($ :p
-        {:class "text-xs font-light text-gray-500 dark:text-gray-400"}
+        {:class "text-xs text-gray-500 dark:text-gray-400"}
         "No cookies for you! This page respects your data and privacy. <3 Stay healthy, stay strong."))))
 
 (defui home-page []
