@@ -72,7 +72,7 @@
        "<body class=\"font-sans\">\n"
        "  <div id=\"root\">" content "</div>\n"
        (when script-src
-         (str "  <script src=\"" script-src "\"></script>\n"))
+         (str "  <script src=\"" script-src "\" defer></script>\n"))
        "</body>\n"
        "</html>"))
 
