@@ -124,15 +124,15 @@
     ($ :div
       {:class "grid gap-8 md:grid-cols-2"}
       ($ :div
-        {:class "prose prose-lg"}
+        {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
-          {:class "text-lg mb-3 text-gray-900 dark:text-white"}
+          {:class "text-lg mb-3 text-gray-900 dark:text-white prose-headings:font-regular"}
           "Technical Leadership")
         ($ :p
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Guiding engineering teams through complex projects, establishing best practices, and mentoring developers to reach their full potential."))
       ($ :div
-        {:class "prose prose-lg"}
+        {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Full-Stack Development")
@@ -140,7 +140,7 @@
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Building end-to-end solutions using modern technologies including React, Node.js, Clojure, and cloud platforms."))
       ($ :div
-        {:class "prose prose-lg"}
+        {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "System Architecture")
@@ -148,7 +148,7 @@
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
           "Designing scalable, maintainable systems that grow with your business needs and handle real-world complexity."))
       ($ :div
-        {:class "prose prose-lg"}
+        {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Consulting & Training")
@@ -160,7 +160,7 @@
   ($ :section
     {:class "mb-10 md:mb-16 max-w-prose mx-auto"}
     ($ :h2
-      {:class "text-xl font-semibold mb-6 text-gray-900 dark:text-white"}
+      {:class "text-xl font-medium mb-6 text-gray-900 dark:text-white"}
       "Get in touch")
     ($ :div
       {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
