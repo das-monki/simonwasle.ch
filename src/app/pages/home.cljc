@@ -108,15 +108,27 @@
       {:class "prose prose-lg text-gray-700 dark:text-gray-300 leading-relaxed"}
       ($ :p
         {:class "mb-4"}
-        "I'm an independent software developer and founder with more than 10 years of experience in industry and startups.")
+        "I'm an independent software developer and entrepreneur solving real-world problems for 10+ years. My expertise spans product design, full-stack development, system architecture, modern web technologies, infrastructure and operations.")
+      ;; ($ :p
+      ;;   {:class "mb-4"}
+      ;;   "My expertise spans product design, full-stack development, system architecture, modern web technologies, infrastructure and operations.")
       ($ :p
         {:class "mb-4"}
-        "I like building things. Useful things. Beautiful things. Things people actually use. I’ve spent the last years turning napkin sketches into software that stands up in production. My expertise spans product design, full-stack development, system architecture, modern web technologies, infrastructure and operations.")
+        "I turned a green-field idea into a fully launched product, drafting the business plan, designing the UX, implementing it end-to-end, landing early customers, and running 24 / 7 cloud operations. I've built mission-critical systems in the financial industry from the ground up that dozens of banks depend on every day.")
+      ;; ($ :p
+      ;;   {:class "mb-4"}
+      ;;   "I’ve taken a green-field product from concept to market - owning the business plan, product design, implementation, customer acquisition, and " ($ :nobr {:class "inline"} "24 / 7") " cloud operations. I've built mission-critical systems in the financial industry from the ground up that dozens of banks depend on every day.")
       ($ :p
         {:class "mb-4"}
-        "I like clean, readable, and maintainable code, pragmatic LLM add-ons that solve real problems, and lightweight processes that keep teams moving. Between projects you’ll find me scratching my own itches - writing small utilities, experimenting with new tech, or tinkering with a half-finished hardware prototype.")
+        "Between projects you’ll find me scratching my own itches - writing small utilities, experimenting with new tech, or tinkering with a half-finished hardware prototype.")
+      ;; ($ :p
+      ;;   {:class "mb-4"}
+      ;;   "I like building things. Useful things. Beautiful things. Things people actually use. I’ve spent the last years turning napkin sketches into software that stands up in production. My expertise spans product design, full-stack development, system architecture, modern web technologies, infrastructure and operations.")
+      ;; ($ :p
+      ;;   {:class "mb-4"}
+      ;;   "I like clean, readable, and maintainable code, pragmatic LLM add-ons that solve real problems, and lightweight processes that keep teams moving. Between projects you’ll find me scratching my own itches - writing small utilities, experimenting with new tech, or tinkering with a half-finished hardware prototype.")
       ($ :p
-        "Currently based in Switzerland, I’m building duupay and partnering with teams worldwide to turn ideas into reliable, production software. Open to select collaborations."))))
+        "Currently based in Switzerland, I’m running duupay and partnering with teams worldwide to turn ideas into reliable, production software. Open to select collaborations."))))
 
 (defui what-i-offer-section []
   ($ :section
