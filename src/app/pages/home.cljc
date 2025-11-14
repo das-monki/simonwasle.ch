@@ -142,6 +142,22 @@
         {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
           {:class "text-lg mb-3 text-gray-900 dark:text-white"}
+          "DevOps & Infrastructure")
+        ($ :p
+          {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
+          "Building and operating production systems on cloud platforms (GCP, Kubernetes). Implementing CI/CD pipelines, monitoring, and IaC."))
+      ($ :div
+        {:class "prose prose-lg prose-headings:font-medium"}
+        ($ :h3
+          {:class "text-lg mb-3 text-gray-900 dark:text-white"}
+          "AI Adoption & Integration")
+        ($ :p
+          {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
+          "Helping teams leverage AI - from evaluating use cases to building custom tools (MCP servers, API integrations) and training."))
+      ($ :div
+        {:class "prose prose-lg prose-headings:font-medium"}
+        ($ :h3
+          {:class "text-lg mb-3 text-gray-900 dark:text-white"}
           "Technical Leadership")
         ($ :p
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
@@ -153,7 +169,7 @@
           "Full-Stack Development")
         ($ :p
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
-          "Building end-to-end solutions using modern technologies including React, Node.js, Clojure, and cloud platforms."))
+          "Building end-to-end solutions using modern technologies including React, Clojure, ClojureScript and cloud platforms."))
       ($ :div
         {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
