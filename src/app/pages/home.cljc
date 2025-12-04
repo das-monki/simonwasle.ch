@@ -128,7 +128,7 @@
       ;;   {:class "mb-4"}
       ;;   "I like clean, readable, and maintainable code, pragmatic LLM add-ons that solve real problems, and lightweight processes that keep teams moving. Between projects you’ll find me scratching my own itches - writing small utilities, experimenting with new tech, or tinkering with a half-finished hardware prototype.")
       ($ :p
-        "Currently based in Switzerland, I’m running duupay and partnering with teams worldwide to turn ideas into reliable, production software. Open to select collaborations."))))
+        "Currently based in Switzerland, I’m running duupay and partnering with teams worldwide to turn ideas into reliable, production software. Open to collaborations and select opportunities."))))
 
 (defui what-i-offer-section []
   ($ :section
@@ -145,7 +145,7 @@
           "DevOps & Infrastructure")
         ($ :p
           {:class "text-gray-700 dark:text-gray-300 leading-relaxed"}
-          "Building and operating production systems on cloud platforms (GCP, Kubernetes). Implementing CI/CD pipelines, monitoring, and IaC."))
+          "Building and operating production systems on cloud platforms. CI/CD pipelines, monitoring, and IaC with Terraform. NixOS for reproducible configuration and deployments."))
       ($ :div
         {:class "prose prose-lg prose-headings:font-medium"}
         ($ :h3
